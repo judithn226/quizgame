@@ -4,10 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-    <div id="quiz"></div>
-    <button id="submit">Submit Quiz</button>
-    <div id="results"></div>
+    <!-- Navbar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+             <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+                <a class="nav-link" href="#">View Highscores <span class="sr-only">(current)</span></a>
+             </li>
+            </ul>
+            <span class="navbar-text" id="time">
+                Time:
+            </span>
+            </div>
+        </nav>
+    </div>
+    <!-- Mainscreen-->
+    <div id="mainScrn" class="col px-0">
+        <h1 class="text-center"> Javascript Fundamentals Quiz</h1>
+        <p class="lead my-3 text-center">
+            You have 60 seconds to answer questions about Javascript Fundamentals. Beware:Every wrong answer will deduct your time!
+        </p>
+    </div>
+    <!-- Buttons-->
+    <div class="text-center mt-5">
+         <button id="startBtn" type="button" class="btn btn-outline-dark btn-lg">
+        Start
+        </button>
+    </div>  
+    <div class="text-center mt-5">
+        <button id="goBackBtn" type="button" class="btn btn-outline-light btn-lg mx-3">
+            Go Back
+        </button>
+        <button id="clearBtn" type="button" class="btn btn-outline-light btn-lg mx-3">
+            Clear Highscores
+        </button>
+    </div>
+    <!--Questions & Answers Screen-->
+    <div id="questions" class="jumbotron mt-5 mb-2 p-4 p-md-5 text-white rounded bg-dark hide">
+        <div class="col px-0">
+            <h1 id="question" class="display-4 text-center">Questions</h1>
+        </div>
+        <div id="answerBtns" class="text-center my-5">
+            <button id="answerBtn1" type="button" class="btn btn-outline-light btn-lg my-3 mx-3"> 
+            </button>
+            <button id="answerBtn2" type="button" class="btn btn-outline-light btn-lg my-3 mx-3"> 
+            </button>
+            <button id="answerBtn3" type="button" class="btn btn-outline-light btn-lg my-3 mx-3"> 
+            </button>
+            <button id="answerBtn3" type="button" class="btn btn-outline-light btn-lg my-3 mx-3"> 
+            </button>
+        <div id="response" class="blog-header-logo text-center"></div>
+
+        </div>
+    </div>
+
+    <!-- End Scores and Initials Screen-->
+    <div id="endScore" class="jumbotron mt-5 mb-2 p-4 p-md-5 text-white rounded bg-dark hide">
+        <div class="col px-0">
+            <h1 class="display-4">End Of Quiz!</h1>
+        </div>
+        <p id="score" class="lead my-4"></p>
+        <form>
+            <div class="form-row align-item-center">
+                <div class="col-auto">
+                    <p class="lead mb-2 my-2"> Enter Initials:</p>
+
+                </div>
+                <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Name</label>
+                    <input type="text" class="form-control mb-2 my-2" id="inlineFormInput" placeholder="Initials">
+                </div>
+                <div class="col-auto">
+                    <button id="submitBtn" type="button" class="btn btn-outline-light btn-lg mb-2 my-2">Submit</button>
+                </div>
+            </div>
+        </form>
+        <p id="displaymessage" class="lead my-4"></p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
